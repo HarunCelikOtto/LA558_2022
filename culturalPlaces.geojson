@@ -1,0 +1,95 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#eeab0f",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "Traveler": "Harun Celik",
+        "Place": "Yellowstone National Park",
+        "Month": "April"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.49430847167969,
+          44.73697895420882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f00d0d",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "Traveler": "Harun Celik",
+        "Place": "Honolulu",
+        "Month": "March"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -157.86306381225586,
+          21.294447585980215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#004080",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "Traveler": "Harun Celik",
+        "Place": "Rocky Mountains",
+        "Month": "September"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.52350997924803,
+          40.37558222923351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#408080",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "Traveler": "Harun Celik",
+        "Place": "Yosemite National Park",
+        "Month": "April"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.6282386779785,
+          37.72117026127688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#800000",
+        "marker-size": "medium",
+        "marker-symbol": "",
+        "Traveler": "Harun Celik",
+        "Place ": "Tongass National Forest",
+        "Month": "October"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -134.73023414611816,
+          58.37580959157221
+        ]
+      }
+    }
+  ]
+}
