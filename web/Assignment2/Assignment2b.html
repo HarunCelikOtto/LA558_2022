@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>"Assignment 2a"</title>
+<meta name="description" content="LA 558 GeoJSON into Leaflet version 2 - 2022" />
+
+<style>
+    html, body, 
+
+#map { height: 500px; margin: 0; padding: 0; }
+
+
+.legend {
+    line-height: 10px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 20px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.9;
+}
+.info {
+    padding: 6px 8px;
+    font: 10px/20px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+
+.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
+</style>
+
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	  
+	<script src="https://profseeger.github.io/LVM-Code/classes/leaflet-ajax-gh-pages/dist/leaflet.ajax.min.js"></script>
+	  
+  </head>
+  <body>
+    <h2> Harun Celik - Rural Population in Iowa Counties by Percentages</h2><br>
+<div id="map"></div>
+
+<script>
+console.clear();
+
+var map = L.map('map').setView([42.2, -93], 7);
+
+// add an OpenStreetMap tile layer
+var osm = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 18
+}).addTo(map);
+
+
+//set color of marker
+function getColor(d) {
+  return d <= '50' ? "grey" :
+    d <= '65' ? "ltgreen" :
+    d <= '80' ? "#478778" :
+    d <= '100' ? "blue" :
+    "#000"; //black
+}
+
+function style(feature) {
+  return {
+    fillColor: getColor(feature.properties.Rural),
+    weight: 1,
+    opacity: 1,
+    color: 'white',
+    dashArray: '8',
+    fillOpacity: 0.7
+  };
+}
+
+url = "https://profseeger.github.io/myLA558-cjseeger/web/demoPop_optimized_v2.geojson";
+
+var geojsonLayer = new L.GeoJSON.AJAX(url, {
+  style: style,
+  onEachFeature: function(feature, layer) {
+    htmlText = "<strong>" + feature.properties.COUNTY + "</strong><br>" +
+      "Total Population: " + feature.properties.TOT_POP + "<br>" +
+       "Total Urban Population: " + feature.properties.URBAN + "<br>" +
+       "Total Rural Population: " + feature.properties.Rural;
+    layer.bindPopup(htmlText);
+    layer.bindTooltip(feature.properties.COUNTY + " County");
+  }
+}).addTo(map);
+
+
+//Create Legend
+
+var legend = L.control({
+  position: 'bottomright'
+});
+//Possible values are 'topleft', 'topright', 'bottomleft' or 'bottomright'
+
+legend.onAdd = function(map) {
+  var legendDiv = L.DomUtil.create('legendDiv', 'info legend'),
+    grades = [0, 25, 50, 75, 100],
+    labels = ['<strong>Percent Rural</strong><br>']
+
+
+
+  // loop through our density intervals and generate a label with a colored square for each interval
+  for (var i = 0; i < grades.length; i++) {
+    legendDiv.innerHTML +=
+      labels.push('<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+      grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : ''));
+  }
+  legendDiv.innerHTML = labels.join('');
+ 
+  return legendDiv;
+};
+</script>
+  </body>
+</html>
