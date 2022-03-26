@@ -46,7 +46,7 @@
 	  
   </head>
   <body>
-    <h2> Harun Celik - Total Population of People 25 or Older with a Bachelors Degree or Higher in Iowa</h2><br>
+    <h2> Total Population of People 25 or Older with a Bachelors Degree or Higher in Iowa</h2><br>
 <div id="map"></div>
 
 <script>
@@ -84,7 +84,7 @@ function style(feature) {
 }
 
 
-url = "https://profseeger.github.io/myLA558-cjseeger/web/demoPop_optimized_v2.geojson";
+url = "https://github.com/HarunCelikOtto/LA558_2022/blob/ceab6e0dc7463ef17d7430597b045a4cee0a3b81/25_Over_Bachelors_Degree_or_Higher.geojson";
 
 var geojsonLayer = new L.GeoJSON.AJAX(url , {
 	style: style,
@@ -103,7 +103,7 @@ var geojsonLayer = new L.GeoJSON.AJAX(url , {
 
 	
 //Create Legend
-
+/*
 var legend = L.control({position: 'bottomright'});
   	//Possible values are 'topleft', 'topright', 'bottomleft' or 'bottomright'
 
@@ -125,6 +125,8 @@ legend.onAdd = function(map) {
 };
 
 legend.addTo(map);
+*/
+
 </script>
   </body>
 </html>
