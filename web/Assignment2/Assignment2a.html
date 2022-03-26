@@ -46,7 +46,7 @@
 	  
   </head>
   <body>
-    <h2> Total Population of People 25 or Older with a Bachelors Degree or Higher in Iowa</h2><br>
+    <h2> Total Population of People 25 or Older with a Bachelors Degree or Higher in Iowa by County</h2><br>
 <div id="map"></div>
 
 <script>
@@ -63,18 +63,18 @@ var osm = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 
 //set color of marker
 function getColor(d) {
-  return d <= '1000' ? '#f50fbf' :
-    d <= '5000' ? "#CF412E" :
-   d <= '25000' ? "#79d491" :
-    d <= '50000' ? "#6e62d9" :
-  d <= '100000' ? "#008000" :
-    d <= '200000' ? "#FFA500" :
-    "#000"; //black
+  return d <= '10' ? '#f6eff7' :
+    d <= '100' ? "#d0d1e6" :
+   d <= '200' ? "#a6bddb" :
+    d <= '300' ? "#67a9cf" :
+  d <= '400' ? "#3690c0" :
+    d <= '500' ? "#02818a" :
+    "#016450";
 }
 
 function style(feature) {
     return {
-        fillColor: getColor(feature.properties.TOT_POP),
+        fillColor: getColor(feature.properties.twentyfive_older),
         weight: 1,
         opacity: 1,
         color: 'black',
@@ -89,24 +89,22 @@ url = "https://HarunCelikOtto.github.io/LA558_2022/web/Assignment2/25_Over_Bache
 var geojsonLayer = new L.GeoJSON.AJAX(url , {
 	style: style,
 	onEachFeature: function (feature, layer) {
-          htmlText = "<strong>" + feature.properties.COUNTY + "</strong><br>" +
-            "Total Population: " + feature.properties.TOT_POP + "<br>"+
-            "Total Urban: " + feature.properties.TOT_POP_UR + "<br>"+
-            "Total Rural: " + feature.properties.TOT_POP_RU;
+          htmlText = "<strong>" + feature.properties.County + "</strong><br>" +
+            "People 25 and Above With Degrees: " + feature.properties.twentyfive_older + "<br>";
         layer.bindPopup(htmlText);
-		layer.bindTooltip(feature.properties.COUNTY);
+		layer.bindTooltip(feature.properties.County);
     }
 }).addTo(map);
 	
 //Create Legend
-/*
+
 var legend = L.control({position: 'bottomright'});
   	//Possible values are 'topleft', 'topright', 'bottomleft' or 'bottomright'
 
 legend.onAdd = function(map) {
     var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 1000, 5000, 25000, 50000, 100000, 200000],
-        labels = [];
+        grades = [10, 100, 200, 300, 400, 500],
+        labels = ['<strong>Population With Degrees</strong><br>'];
   
 
 
@@ -121,8 +119,7 @@ legend.onAdd = function(map) {
 };
 
 legend.addTo(map);
-*/
+
 
 </script>
   </body>
-</html>
