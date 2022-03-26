@@ -84,7 +84,7 @@ function style(feature) {
 }
 
 
-url = "https://github.com/HarunCelikOtto/LA558_2022/blob/ceab6e0dc7463ef17d7430597b045a4cee0a3b81/25_Over_Bachelors_Degree_or_Higher.geojson";
+url = "https://github.com/HarunCelikOtto/LA558_2022/blob/ee69a230e9f2bead0ed7f4e981734f95fb9aed70/web/Assignment2/25_Over_Bachelors_Degree_or_Higher_WGS.geojson";
 
 var geojsonLayer = new L.GeoJSON.AJAX(url , {
 	style: style,
@@ -97,10 +97,6 @@ var geojsonLayer = new L.GeoJSON.AJAX(url , {
 		layer.bindTooltip(feature.properties.COUNTY);
     }
 }).addTo(map);
-
-
-
-
 	
 //Create Legend
 /*
