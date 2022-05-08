@@ -1,5 +1,22 @@
-# LA558_2022
+# LA558_2022 Page
 
-Course website
+Harun Celik's Course website
 
-Harun Celik's Site
+Assignments
+
+[Assignment One]()
+
+[Assignment Two]()
+
+[Assignment Three]()
+
+[Assignment Four]()
+
+
+Exercises
+
+[Exercise 2A]()
+
+[Exercise 2B]()
+
+[Exercise 3A]()
