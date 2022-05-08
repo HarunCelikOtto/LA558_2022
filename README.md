@@ -1,6 +1,4 @@
-# LA558_2022 Page
-
-Harun Celik's Course website
+# Harun Celik
 
 Assignments
 
