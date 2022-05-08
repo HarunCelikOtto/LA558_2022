@@ -1,6 +1,6 @@
 # Harun Celik
 
-Assignments
+## Assignments
 
 [Assignment One](https://haruncelikotto.github.io/LA558_2022/web/Assignment1/AssignmentOne.html)
 
@@ -13,7 +13,7 @@ Assignments
 [Assignment Four](https://haruncelikotto.github.io/LA558_2022/web/Assignment4/Assignment4.html)
 
 
-Exercises
+## Exercises
 
 [Exercise 2A](https://haruncelikotto.github.io/LA558_2022/web/Exercises/ex2a.html)
 
