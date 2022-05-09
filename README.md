@@ -2,7 +2,7 @@
 
 ## Final Project Website
 
-[Ottoman Maps](https://haruncelikotto.github.io/LA558_2022/web/Final Project/Index.html)
+[Ottoman Maps](https://haruncelikotto.github.io/LA558_2022/web/FinalProject/Index.html)
 
 ## Assignments
 
